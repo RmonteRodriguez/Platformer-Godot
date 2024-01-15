@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 700.0
 
+var canMove
+
 #Vars for jumping
 const JUMP_VELOCITY = -700.0
 const amountOfJumps = 2
@@ -13,6 +15,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
+	if canMove == false: 
+		return
+	
 	#resets jump counter when on the floor
 	if is_on_floor():
 		amountOfJumpsLeft = amountOfJumps

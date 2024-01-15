@@ -1,16 +1,10 @@
 extends Area2D
 
-var player = null
+@export var sceneCamera: Camera2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+@onready var playerNode = get_node("../Player")
 
 func _input(event):
 	if get_overlapping_bodies().size() > 0:
-		print("hello")
+		playerNode.canMove = false
+		sceneCamera.make_current()

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1gp0u151vgct"]
+
+[ext_resource type="Script" path="res://lose condition.gd" id="1_aa8b4"]
+[ext_resource type="Texture2D" uid="uid://ctv5b6oopqx0c" path="res://Sprites/square.png" id="2_rt0qu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwmhx"]
+
+[node name="Lose Condiion" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_aa8b4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.388235, 0, 0.517647, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_rt0qu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wwmhx")
